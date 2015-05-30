@@ -215,7 +215,7 @@ DWORD WINAPI ThreadFunc(LPVOID)
 			ZeroMemory(&ofn, sizeof(ofn));
 			ofn.lStructSize = sizeof(OPENFILENAME);
 			ofn.hwndOwner = hWnd;
-			ofn.lpstrFilter = TEXT("ISO(*.iso)\0*.txt\0Ç∑Ç◊ÇƒÇÃÉtÉ@ÉCÉã(*.*)\0*.*\0\0");
+			ofn.lpstrFilter = TEXT("ISO(*.iso)\0*.iso\0„Åô„Åπ„Å¶„ÅÆ„Éï„Ç°„Ç§„É´(*.*)\0*.*\0\0");
 			ofn.lpstrFile = szFileName;
 			ofn.nMaxFile = sizeof(szFileName);
 			ofn.Flags = OFN_FILEMUSTEXIST | OFN_OVERWRITEPROMPT;
@@ -229,8 +229,8 @@ DWORD WINAPI ThreadFunc(LPVOID)
 					GetCurrentThreadId());
 				MessageBox(
 					hWnd,
-					TEXT("äÆóπÇµÇ‹ÇµÇΩÅB"),
-					TEXT("ämîF"),
+					TEXT("ÂÆå‰∫Ü„Åó„Åæ„Åó„Åü„ÄÇ"),
+					TEXT("Á¢∫Ë™ç"),
 					MB_ICONINFORMATION);
 			}
 			else
@@ -273,8 +273,8 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 							GetCurrentThreadId());
 						MessageBox(
 							hWnd,
-							TEXT("èoóÕÉtÉ@ÉCÉãñºÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅB"),
-							TEXT("ämîF"),
+							TEXT("Âá∫Âäõ„Éï„Ç°„Ç§„É´Âêç„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ„ÄÇ"),
+							TEXT("Á¢∫Ë™ç"),
 							MB_ICONINFORMATION);
 						SetFocus(GetDlgItem(hWnd,ID_EDITBOX));
 						break;
@@ -296,8 +296,8 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 							GetCurrentThreadId());
 						if(IDYES==MessageBox(
 							hWnd,
-							TEXT("íÜífÇµÇ‹Ç∑Ç©ÅH"),
-							TEXT("ämîF"),
+							TEXT("‰∏≠Êñ≠„Åó„Åæ„Åô„ÅãÔºü"),
+							TEXT("Á¢∫Ë™ç"),
 							MB_YESNO|MB_ICONINFORMATION))
 							gbRun=FALSE;
 					}
@@ -336,11 +336,11 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 			break;
 		case WM_CREATE:
 			InitCommonControls();
-			hFont = CreateFont(22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, TEXT("ÉÅÉCÉäÉI"));
+			hFont = CreateFont(22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, TEXT("„É°„Ç§„É™„Ç™"));
 			{
 				const HWND hStatic1 = CreateWindow(
 					TEXT("STATIC"),
-					TEXT("ÉhÉâÉCÉuëIë(&D):"),
+					TEXT("„Éâ„É©„Ç§„ÉñÈÅ∏Êäû(&D):"),
 					WS_CHILD | WS_VISIBLE | SS_RIGHT | SS_CENTERIMAGE,
 					4, 4, 128 + 64, 32,
 					hWnd,
@@ -358,7 +358,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 					0);
 				const HWND hStatic2 = CreateWindow(
 					TEXT("STATIC"),
-					TEXT("èoóÕÉtÉ@ÉCÉãñº(&F):"),
+					TEXT("Âá∫Âäõ„Éï„Ç°„Ç§„É´Âêç(&F):"),
 					WS_CHILD | WS_VISIBLE | SS_RIGHT | SS_CENTERIMAGE,
 					4, 32 + 8, 128 + 64, 32,
 					hWnd,
@@ -377,7 +377,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 					0);
 				const HWND hStatic3 = CreateWindow(
 					TEXT("STATIC"),
-					TEXT("êiíª:"),
+					TEXT("ÈÄ≤Êçó:"),
 					WS_CHILD | WS_VISIBLE | SS_RIGHT | SS_CENTERIMAGE,
 					4, 32 + 32 + 12, 128 + 64, 32,
 					hWnd,
@@ -395,7 +395,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 					0);
 				const HWND hButton1 = CreateWindow(
 					TEXT("BUTTON"),
-					TEXT("äJén(&S)"),
+					TEXT("ÈñãÂßã(&S)"),
 					WS_CHILD | WS_VISIBLE | WS_TABSTOP,
 					32, 32 + 32 + 32 + 16, 128, 32,
 					hWnd,
@@ -404,7 +404,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 					0);
 				const HWND hButton2 = CreateWindow(
 					TEXT("BUTTON"),
-					TEXT("íÜíf(&C)"),
+					TEXT("‰∏≠Êñ≠(&C)"),
 					WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_DISABLED,
 					128 + 32 + 16, 32 + 32 + 32 + 16, 128, 32,
 					hWnd,
@@ -413,7 +413,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 					0);
 				const HWND hButton3 = CreateWindow(
 					TEXT("BUTTON"),
-					TEXT("ï¬Ç∂ÇÈ(&X)"),
+					TEXT("Èñâ„Åò„Çã(&X)"),
 					WS_CHILD | WS_VISIBLE | WS_TABSTOP,
 					256 + 64, 32 + 32 + 32 + 16, 128, 32,
 					hWnd,
@@ -484,7 +484,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 				g_hHook=SetWindowsHookEx(
 					WH_CBT,CBTProc,0,GetCurrentThreadId());
 				if(IDYES!=MessageBox(
-					hWnd,TEXT("íÜífÇµÇ‹Ç∑Ç©ÅH"),TEXT("ämîF"),
+					hWnd,TEXT("‰∏≠Êñ≠„Åó„Åæ„Åô„ÅãÔºü"),TEXT("Á¢∫Ë™ç"),
 					MB_YESNO|MB_ICONINFORMATION))break;
 			}
 			DestroyWindow(hWnd);
